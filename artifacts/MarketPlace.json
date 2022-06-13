@@ -1,0 +1,79 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"görli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"functionDebugData": {
+				"@_1730": {
+					"entryPoint": null,
+					"id": 1730,
+					"parameterSlots": 0,
+					"returnSlots": 0
+				},
+				"@_18": {
+					"entryPoint": null,
+					"id": 18,
+					"parameterSlots": 0,
+					"returnSlots": 0
+				}
+			},
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "6080604052666a94d74f430000600455348015601a57600080fd5b50600160008190555033600360006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550603f8060716000396000f3fe6080604052600080fdfea2646970667358221220001604332f048de37b5c4d7a765ac3c171983a6a484dec7839f3ca7debfcad6d64736f6c63430008070033",
+			"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH7 0x6A94D74F430000 PUSH1 0x4 SSTORE CALLVALUE DUP1 ISZERO PUSH1 0x1A JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x1 PUSH1 0x0 DUP2 SWAP1 SSTORE POP CALLER PUSH1 0x3 PUSH1 0x0 PUSH2 0x100 EXP DUP2 SLOAD DUP2 PUSH20 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF MUL NOT AND SWAP1 DUP4 PUSH20 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF AND MUL OR SWAP1 SSTORE POP PUSH1 0x3F DUP1 PUSH1 0x71 PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 STOP AND DIV CALLER 0x2F DIV DUP14 0xE3 PUSH28 0x5C4D7A765AC3C171983A6A484DEC7839F3CA7DEBFCAD6D64736F6C63 NUMBER STOP ADDMOD SMOD STOP CALLER ",
+			"sourceMap": "243:461:11:-:0;;;616:10;593:33;;635:60;;;;;;;;;;1701:1:0;1806:7;:22;;;;676:10:11;660:5;;:27;;;;;;;;;;;;;;;;;;243:461;;;;;;"
+		},
+		"deployedBytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "6080604052600080fdfea2646970667358221220001604332f048de37b5c4d7a765ac3c171983a6a484dec7839f3ca7debfcad6d64736f6c63430008070033",
+			"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 STOP AND DIV CALLER 0x2F DIV DUP14 0xE3 PUSH28 0x5C4D7A765AC3C171983A6A484DEC7839F3CA7DEBFCAD6D64736F6C63 NUMBER STOP ADDMOD SMOD STOP CALLER ",
+			"sourceMap": "243:461:11:-:0;;;;;"
+		},
+		"gasEstimates": {
+			"creation": {
+				"codeDepositCost": "12600",
+				"executionCost": "68552",
+				"totalCost": "81152"
+			}
+		},
+		"methodIdentifiers": {}
+	},
+	"abi": [
+		{
+			"inputs": [],
+			"stateMutability": "nonpayable",
+			"type": "constructor"
+		}
+	]
+}
