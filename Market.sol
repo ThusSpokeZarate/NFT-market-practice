@@ -18,4 +18,32 @@ contract MarketPlace is ReentrancyGuard {
         owner = payable(msg.sender);
     }
     
+    struct MarketItem {
+        uint itemId;
+        address nftContract;
+        uint256 tokenId;
+        address payable seller;
+        address payable owner;
+        uint256 price;
+        bool sold;
+    }
+    // access struct with mapping
+    // access MarketItem by passing and integerId
+    mapping(uint256 => MarketItem) private idMarketItem;
+
+    //declare event to log sell activity
+    //events do not use semi colon but commas
+    event MarketItemCreation (
+        uint indexed itemId,
+        address indexed nftContract,
+        uint256 indexed tokenId,
+        address payable seller, 
+        address payable owner,
+        uint256 price,
+        bool sold
+    );
+
+    function getListingPrice() public view returns (uint256) {
+        return listingPrice;
+    }
 }

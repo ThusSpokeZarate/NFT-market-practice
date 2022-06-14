@@ -9,6 +9,68 @@
 				"inputs": [],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "itemId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "nftContract",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address payable",
+						"name": "seller",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address payable",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "sold",
+						"type": "bool"
+					}
+				],
+				"name": "MarketItemCreation",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "getListingPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -24,7 +86,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"NFT-market-practice/Market.sol": "MarketPlace"
+			"Market.sol": "MarketPlace"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -126,11 +188,11 @@
 				"dweb:/ipfs/QmP7C3CHdY9urF4dEMb9wmsp1wMxHF6nhA2yQE5SKiPAdy"
 			]
 		},
-		"NFT-market-practice/Market.sol": {
-			"keccak256": "0x2f76351c007b74c01a170efd3ce36d262d7292e5e4b0dc2d4ae78dfaba744078",
+		"Market.sol": {
+			"keccak256": "0x1de0459d7a7793a91d030bb6473f1f5d20babf7df62bc366a961027574611e7d",
 			"urls": [
-				"bzz-raw://13429cbfd4efa7140c912dda8eafee4e923a29425c137636661614823a6daf34",
-				"dweb:/ipfs/QmU2M8jDzVMpiPGYrDGTmBWLuWoUTxhXFVhFX9Wz19wNQE"
+				"bzz-raw://d770b6263f4ed9d859d6b8ab513f36a47ac4be3ce3d694291a01115f9b1fc413",
+				"dweb:/ipfs/QmakSZEV31aJUa1Z1DwzykTsRp2aZRLp2rPmF3fT4TNTAT"
 			]
 		}
 	},
