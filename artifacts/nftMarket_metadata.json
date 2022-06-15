@@ -56,7 +56,7 @@
 						"type": "bool"
 					}
 				],
-				"name": "MarketItemCreation",
+				"name": "MarketItemCreated",
 				"type": "event"
 			},
 			{
@@ -80,6 +80,174 @@
 				"name": "createMarketItem",
 				"outputs": [],
 				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "nftContract",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "itemId",
+						"type": "uint256"
+					}
+				],
+				"name": "createMarketSale",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "fetchItemsCreated",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "itemId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "nftContract",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "tokenId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address payable",
+								"name": "seller",
+								"type": "address"
+							},
+							{
+								"internalType": "address payable",
+								"name": "owner",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "price",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "sold",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct nftMarket.MarketItem[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "fetchMarketItems",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "itemId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "nftContract",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "tokenId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address payable",
+								"name": "seller",
+								"type": "address"
+							},
+							{
+								"internalType": "address payable",
+								"name": "owner",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "price",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "sold",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct nftMarket.MarketItem[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "fetchMyNFTs",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "itemId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "nftContract",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "tokenId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address payable",
+								"name": "seller",
+								"type": "address"
+							},
+							{
+								"internalType": "address payable",
+								"name": "owner",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "price",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "sold",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct nftMarket.MarketItem[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -122,13 +290,29 @@
 		},
 		"userdoc": {
 			"kind": "user",
-			"methods": {},
+			"methods": {
+				"createMarketItem(address,uint256,uint256)": {
+					"notice": "create a function that manages MarketItem"
+				},
+				"createMarketSale(address,uint256)": {
+					"notice": "function to create a sale"
+				},
+				"fetchItemsCreated()": {
+					"notice": "fetch the list of NFT's created by the user"
+				},
+				"fetchMarketItems()": {
+					"notice": "total number of items unsold on our platform"
+				},
+				"fetchMyNFTs()": {
+					"notice": "fetch the list of NFT's bought by the user"
+				}
+			},
 			"version": 1
 		}
 	},
 	"settings": {
 		"compilationTarget": {
-			"Market.sol": "MarketPlace"
+			"example.sol": "nftMarket"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -230,11 +414,12 @@
 				"dweb:/ipfs/QmP7C3CHdY9urF4dEMb9wmsp1wMxHF6nhA2yQE5SKiPAdy"
 			]
 		},
-		"Market.sol": {
-			"keccak256": "0x789bd801f4995f04bdc2c3bde44ea86c924a13c14944edac902b70c4131adbd8",
+		"example.sol": {
+			"keccak256": "0x774c17ae2b09eedd2ae59cee31e4c864fd0da885a261bca5499e20cf18026a6e",
+			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://5ffb262a17891f479178fbec9ffee6191b7ec919fed9c4d65297e4291c3a5b16",
-				"dweb:/ipfs/QmPmxm3uhxQRosZ5Gzwuot6Xx6ftzKu4Td9P5eaKPb1YWt"
+				"bzz-raw://82bb6f3b7b82e64f8bd6acaf2473eb2aaf4fcee0d9801c91616c40de86b1bb9e",
+				"dweb:/ipfs/QmTDnC9qjfs6AkvFatC2tkpa6UGFdusTANKS8hLbvTn2eo"
 			]
 		}
 	},
