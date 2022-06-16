@@ -53,10 +53,7 @@ contract MarketPlace is ReentrancyGuard {
     }
 
     // TO DO: create function that manages MarketItem
-    function createMarketItem(
-        address nftContract,
-        uint tokenId,
-        uint256 price) public payable nonReentrant {
+    function createMarketItem(address nftContract, uint tokenId, uint256 price) public payable nonReentrant {
         require(price > 0, "Price must be above zero");
         require(msg.value == listingPrice, "Price must be equal to listing price");
         
@@ -87,4 +84,25 @@ contract MarketPlace is ReentrancyGuard {
             price,
             false);
         
+        }
+
+        function createMarketSale(address nftContract, uint256 itemId) public payable nonReentrant {
+            uint price = idMarketItem[itemId].price;
+            uint tokenId = idMarketItem[itemId].tokenId;
+
+            require(msg.value == price, "stop trying to pay the wrong price!");
+
+            //transfer the seller the purchase value
+            idMarketItem[itemId].seller.transfer(msg.value);
+
+            //transfer the ownership from the contract itself to the buyer
+            IERC721(nftContract).transferFrom(address(this), msg.sender, tokernId);
+
+            idMarketItem[itemId].owner == payable(msg.sender); // marke the buyer as the new owner
+            idMarketItem[itemId].sold == true; // marke the item as truly sold
+            _itemSold.increment(); // increase count of item sold by 1
+            payable (owner).transfer(listingPrice); // pay the owner of the contract the listing price
+
+        
+
         }
