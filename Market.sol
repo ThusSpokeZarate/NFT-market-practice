@@ -106,3 +106,30 @@ contract MarketPlace is ReentrancyGuard {
         
 
         }
+
+        function fetchMarketItems() public view returns (MarketItem[] memory) {
+            //get total number of items created
+            uint totalItemCount = _itemsIds.current();
+
+            //total unsold items = total items minus total sold items
+            uint unsoldItemCount = _itemsIds.current() - _itemSold.current()
+
+            uint currentIndex = 0;
+
+            //Instantiate an array of MarketItem[]
+            MarketItem[] memory items = new MarketItem[](unsoldItemCount);
+
+            //loop through all items created
+            for(uint i = 0; i < itemCount; i++;) {
+                //check if owner field is empty to see if item has never been sold
+                if(idMarketItem[i+1].owner == address(0)){
+                    // yes item has been sold
+                    uint currentId = idMarketItem[i+1].itemId;
+                    MarketItem storage currentItem = idMarketItem[currentId];
+                    items[currentItems] = currentItem;
+                    currentIndex += 1;
+
+                }
+            }
+            return items; //return array of all items never sold
+        }
